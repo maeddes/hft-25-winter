@@ -1,2 +1,5 @@
 # hft-25-winter
-Super cool new lecture
+
+## 2025-Oct-16 Initial Brainstorming session
+
+![](/images/brainstorm.png)
