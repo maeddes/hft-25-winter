@@ -4,7 +4,7 @@
 
 ![](/images/brainstorm.png)
 
-Introduction to distributed systems - Overview Cloud Computing**  
+Introduction to distributed systems - Overview Cloud Computing
 
 ### **Content Overview**
 
