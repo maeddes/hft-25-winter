@@ -57,3 +57,22 @@ By the end of this lecture, students will be able to:
 3. What are the differences between IaaS, PaaS, and SaaS? Give examples of each in today's cloud ecosystem.
 4. What is the CNCF, and why is it important in the context of cloud-native technologies?
 5. Desribe 3 fallacies of distributed computing
+6. What do you need to build a distributed system? What makes a distributed system a distributed system?
+
+## 2025-Oct-23 Introduction to Container Technology
+
+### What and Why containers?
+
+![](/images/Container-1.png)
+
+### Types of containers
+
+![](/images/Container-2.png)
+
+### Container scenario
+
+![](/images/Container-3.png)
+
+### Container load-balancing scenario
+
+![](/images/Container-4.png)
