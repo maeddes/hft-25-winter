@@ -76,3 +76,7 @@ By the end of this lecture, students will be able to:
 ### Container load-balancing scenario
 
 ![](/images/Container-4.png)
+
+### Open questions
+
+- How does WebAssembly fit into all this?
