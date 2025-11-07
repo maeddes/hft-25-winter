@@ -131,3 +131,7 @@ By the end of this lecture, students will be able to:
 
 
 ![](/images/Container-5.png)
+
+## 2025-Nov-07 Cloud Native Theory - Abstractions, CAP, Conway, 12-factor
+
+![](/images/Cloud-Abstractions-Vercel-Example.png)
