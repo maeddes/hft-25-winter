@@ -61,6 +61,38 @@ By the end of this lecture, students will be able to:
 
 ## 2025-Oct-23 Introduction to Container Technology
 
+### Content Overview
+
+1. Development in distributed teams withouth containers and the potential problems:
+   - Polyglot application landscapes are challenging as all work environments need to match all runtime requirements for all languages
+   - Transporting application from environment A to environment B introduces challenges and problems with mismatching runtimes
+
+2. **Containers**
+   - Isolate Applications from each other
+   - Package Applications along with all Runtime requirements for easy execution and transportation between working environments
+   - Simplify configuration of working environments -> only container engine needed
+   - handling of all application containers through same mechanisms: docker build, docker run
+
+3. **Docker**
+   - Docker ecosystem consists of the Docker Daemon, Docker CLI and Docker Hub
+   - Creation of Dockerfiles
+   - Building Images - Understanding the layer concept in container images
+   - Running Containers
+   - Running multiple container apps with Docker Compose
+
+### **Student/Review Questions**
+1. What is Docker, and how does it differ from traditional virtual machines?
+2. Explain the concept of a Docker image and a Docker container. How are they related?
+3. What are the main components of a Dockerfile? Describe the purpose of each component.
+4. How does Docker ensure isolation and security between containers?
+5. What is a container registry, and how do you use Docker Hub to share or deploy images?
+6. Describe the process of building and running a containerized application using Docker, including common commands.
+7. In which way does Docker Compose use existing fuctionality and in which way does it extend it?.
+
+### Homework
+
+Lab exercises: https://zwtj1.cloudtrainings.online/
+
 ### What and Why containers?
 
 ![](/images/Container-1.png)
@@ -80,3 +112,22 @@ By the end of this lecture, students will be able to:
 ### Open questions
 
 - How does WebAssembly fit into all this?
+
+## 2025-Oct-30 Advanced Container Scenarios - Networks, Volumes & Compose
+
+### **Content Overview**  
+
+This lecture explores advanced Docker features that are essential for managing containerized applications in cloud-native environments. Students will learn about Docker networking modes, data persistence with volumes, and orchestrating multi-container applications using Docker Compose. By mastering these topics, students will be able to design, deploy, and manage robust containerized systems effectively.  
+
+---  
+      
+### **Learning Objectives**  
+
+By the end of this lecture, students will be able to:  
+1. Explain Docker's network modes and create custom networks to manage container communication.  
+2. Differentiate between bind mounts and named volumes, and apply them for persistent data storage.  
+3. Design and implement multi-container applications using Docker Compose.  
+4. Optimize container setups by combining networking and volume management best practices.  
+
+
+![](/images/Container-5.png)
