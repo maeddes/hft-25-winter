@@ -1,6 +1,4 @@
-Perfect — you want a **generic “baseline requirements” task description** that applies to every lab, regardless of which idea or technology they pick. Here’s a clear and structured version suitable for master-level students:
 
----
 
 ## **Generic Lab Task Description – Distributed Systems in Docker**
 
