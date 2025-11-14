@@ -226,3 +226,5 @@ e.g. how do technologies like Spring Boot (or other frameworks/languages), Docke
 
 ### Homework
 - **DO THE DOCKER EXERCISES**
+
+### 2025-Nov-14 Application & Communication / PVL
