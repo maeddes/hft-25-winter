@@ -199,8 +199,6 @@ Recap - Abstractions models in the cloud on the example of Vercel.
 
 ![](/images/Cloud-Abstractions-Vercel-Example.png)
 
-## **2024 / 10 / 28 - Cloud-Native Theory and REST APIs**  
-
 ### **Content Overview**
 
 1. **Distributed Systems Theory**
