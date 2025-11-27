@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item API Client</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        input { margin: 0.25rem; }
+        button { margin: 0.25rem; }
+        pre { background: #f4f4f4; padding: 1rem; }
+    </style>
+</head>
+<body>
+
+<h2>Item API Client</h2>
+
+<h3>Create / Add Quantity (POST /items)</h3>
+<input id="postName" placeholder="Name">
+<input id="postQty" type="number" placeholder="Quantity">
+<button onclick="createOrAdd()">POST</button>
+
+<h3>Replace Quantity (PUT /items/{name})</h3>
+<input id="putName" placeholder="Name">
+<input id="putQty" type="number" placeholder="New Quantity">
+<button onclick="replaceItem()">PUT</button>
+
+<h3>Get Single Item (GET /items/{name})</h3>
+<input id="getName" placeholder="Name">
+<button onclick="getOne()">GET</button>
+
+<h3>Get All Items (GET /items)</h3>
+<button onclick="getAll()">GET ALL</button>
+
+<h3>Delete Item (DELETE /items/{name})</h3>
+<input id="deleteName" placeholder="Name">
+<button onclick="deleteItem()">DELETE</button>
+
+<h3>Response</h3>
+<pre id="output"></pre>
+
+<script>
+const baseUrl = "http://localhost:8080/items";
+
+function show(result) {
+    document.getElementById("output").textContent =
+        typeof result === "string" ? result : JSON.stringify(result, null, 2);
+}
+
+async function createOrAdd() {
+    const name = document.getElementById("postName").value;
+    const qty = parseInt(document.getElementById("postQty").value);
+
+    const res = await fetch(baseUrl, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ name, quantity: qty })
+    });
+
+    show(await res.json());
+}
+
+async function replaceItem() {
+    const name = document.getElementById("putName").value;
+    const qty = parseInt(document.getElementById("putQty").value);
+
+    const res = await fetch(`${baseUrl}/${name}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ name, quantity: qty })
+    });
+
+    if (res.status === 404) return show("Item not found");
+    show(await res.json());
+}
+
+async function getOne() {
+    const name = document.getElementById("getName").value;
+
+    const res = await fetch(`${baseUrl}/${name}`);
+    if (res.status === 404) return show("Item not found");
+    show(await res.json());
+}
+
+async function getAll() {
+    const res = await fetch(baseUrl);
+    show(await res.json());
+}
+
+async function deleteItem() {
+    const name = document.getElementById("deleteName").value;
+
+    const res = await fetch(`${baseUrl}/${name}`, { method: "DELETE" });
+    show(res.status === 204 ? "Deleted" : "Item not found");
+}
+</script>
+
+</body>
+</html>
