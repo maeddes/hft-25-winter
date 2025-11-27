@@ -199,6 +199,8 @@ Recap - Abstractions models in the cloud on the example of Vercel.
 
 ![](/images/Cloud-Abstractions-Vercel-Example.png)
 
+![CAP Theorem](https://github.com/maeddes/hse-25-summer/raw/main/images/2025_04_14_CAP.png)
+
 ### **Content Overview**
 
 1. **Distributed Systems Theory**
@@ -228,7 +230,6 @@ e.g. how do technologies like Spring Boot (or other frameworks/languages), Docke
 - **DO THE DOCKER EXERCISES**
 
 ### 2025-Nov-14 Application & Communication / REST / Docker Compose
-
 
 ![REST and multi-application setup](/images/2024_11_15_REST_multi_container.png)
 
