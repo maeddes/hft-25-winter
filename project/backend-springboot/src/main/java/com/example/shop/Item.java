@@ -22,4 +22,8 @@ public class Item {
 
     public int getQuantity() { return quantity; }
     public void setQuantity(int quantity) { this.quantity = quantity; }
+
+    public String toString() {
+        return String.format("Item{name='%s', quantity=%d}", name, quantity);
+    }
 }
