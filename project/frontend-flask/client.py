@@ -1,9 +1,20 @@
 from flask import Flask, render_template_string, request
+import os
 import requests
+import logging
+import http.client as http_client
+
+http_client.HTTPConnection.debuglevel = 1
+
+logging.basicConfig(level=logging.DEBUG)
+logging.info("🚀 Flask client starting — VERSION 2025-12-18-1")
+logging.getLogger("urllib3").setLevel(logging.DEBUG)
+logging.getLogger("urllib3").propagate = True
 
 app = Flask(__name__)
 
-API_BASE = "http://localhost:8080/items"
+API_BASE = os.getenv("API_BASE", "http://localhost:8080/items")
+logging.info("🔧 API_BASE configured as: %s", API_BASE)
 
 TEMPLATE = """
 <!DOCTYPE html>
@@ -58,6 +69,13 @@ TEMPLATE = """
 </html>
 """
 
+@app.route("/version")
+def version():
+    return {
+        "version": "2025-12-18-1",
+        "service": "flask-client"
+    }
+
 def fmt(response):
     """Format JSON or plaintext response for display."""
     try:
@@ -101,4 +119,4 @@ def get_all():
     return render_template_string(TEMPLATE, response=fmt(r))
 
 if __name__ == "__main__":
-    app.run(port=5123, debug=True)
+    app.run(host="0.0.0.0", port=5123, debug=True)

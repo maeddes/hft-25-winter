@@ -14,28 +14,54 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
-  springboot:
-    # build: ./backend-springboot
+  springboot-one:
+    build: ./backend-springboot
     image: backend-springboot:v0.1
-    container_name: springboot-app
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/itemsdb
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: yourpassword
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SERVER_PORT: 8090
     ports:
-      - "8080:8080"
+      - "8091:8090"
     depends_on:
       - postgres
 
+  springboot-two:
+    build: ./backend-springboot
+    image: backend-springboot:v0.1
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/itemsdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: yourpassword
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SERVER_PORT: 8090
+    ports:
+      - "8092:8090"
+    depends_on:
+      - postgres
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8080:8080"
+    depends_on:
+      - springboot-one
+      - springboot-two
+
   flask:
-    # build: ./frontend-flask
+    build: ./frontend-flask
     image: frontend-flask:v0.1
     container_name: flask-client
     ports:
       - "5123:5123"
     depends_on:
-      - springboot
+      - nginx
+    environment:
+      API_BASE: http://localhost:8080/items
 
 volumes:
   pgdata:

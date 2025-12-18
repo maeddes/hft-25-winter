@@ -6,7 +6,8 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Run the app
-FROM eclipse-temurin:21-jdk
+# jdk makes image bigger than jre, so the image size will be larger and I might introduce vulnerabilities
+FROM eclipse-temurin:21-jdk 
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
