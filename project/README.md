@@ -77,19 +77,18 @@ docker-compose up -d --build
 ### 2. Wait for services to be ready
 
 ```bash
-docker-compose ps
+docker compose ps
 ```
 
 Expected output:
 
 ```
-       Name                     Command               State          Ports
-------------------------------------------------------------------------------
-flask-client          python client.py              Up      0.0.0.0:5123->5123/tcp
-nginx                 nginx -g 'daemon off;'       Up      0.0.0.0:8080->8080/tcp
-springboot-one-1      java -jar app.jar            Up      8080/tcp
-springboot-one-2      java -jar app.jar            Up      8080/tcp
-postgres              docker-entrypoint.sh postgres Up      0.0.0.0:5432->5432/tcp
+NAME                       IMAGE                     COMMAND                  SERVICE          CREATED          STATUS          PORTS
+flask-client               frontend-flask:v0.1       "python client.py"       flask            44 seconds ago   Up 43 seconds   0.0.0.0:5123->5123/tcp, [::]:5123->5123/tcp
+items-postgres             postgres:15               "docker-entrypoint.s…"   postgres         44 seconds ago   Up 43 seconds   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+project-nginx-1            nginx:latest              "/docker-entrypoint.…"   nginx            44 seconds ago   Up 43 seconds   0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+project-springboot-one-1   backend-springboot:v0.1   "java -jar /opt/app.…"   springboot-one   44 seconds ago   Up 43 seconds   0.0.0.0:8091->8090/tcp, [::]:8091->8090/tcp
+project-springboot-two-1   backend-springboot:v0.1   "java -jar /opt/app.…"   springboot-two   44 seconds ago   Up 43 seconds   0.0.0.0:8092->8090/tcp, [::]:8092->8090/tcp
 ```
 
 ---
@@ -110,7 +109,11 @@ This one works better in the browser :-)
 curl http://localhost:8080/items
 ```
 
-###
+### 3. Add an item
+
+```bash
+curl -X POST http://localhost:8080/items -H "Content-Type: application/json" -d '{ "name": "chocolate", "quantity": 4 }'
+```
 
 ### 4. Get container hostname
 
@@ -127,8 +130,8 @@ events {}
 
 http {
     upstream spring_cluster {
-        server springboot-one-1:8090;
-        server springboot-one-2:8090;
+        server springboot-one:8090;
+        server springboot-two:8090;
     }
 
     server {
@@ -272,7 +275,7 @@ Active Spring profile: dev
 Datasource: H2 in-memory
 ```
 
-* `curl http://localhost:8080/items` still works, but DB is H2
+* `curl http://localhost:8080/items` still works, but DB is H2. Which backend and database will be picked is not predictable
 
 ### 4. Differences between PROD and DEV
 
@@ -292,12 +295,6 @@ Datasource: H2 in-memory
 
 ```bash
 docker-compose up -d --build --force-recreate
-```
-
-* **NGINX Host header fix** is important to avoid:
-
-```
-java.lang.IllegalArgumentException: The character [_] is never valid in a domain name
 ```
 
 * **Check environment variables** in container:
