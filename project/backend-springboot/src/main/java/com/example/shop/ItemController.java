@@ -1,5 +1,7 @@
 package com.example.shop;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,15 @@ public class ItemController {
 
     public ItemController(ItemRepository repository) {
         this.repository = repository;
+    }
+
+    @GetMapping("/hostname")
+    public String getHostname() throws UnknownHostException {
+        String hostname = System.getenv("HOSTNAME");
+        if (hostname == null) {
+            hostname = InetAddress.getLocalHost().getHostName();
+        }
+        return hostname;
     }
 
     // POST: create or add quantity
