@@ -55,3 +55,19 @@ Each team will implement a small distributed system using **plain Docker contain
 * Meaningful integration of OSS/CNCF technology
 * Documentation clarity
 
+### PVL Lab – Team & Topic Guidelines
+
+- **Team Size:** Up to 3–4 students.
+- **Team Formation:**  
+  - Only add yourself to a team after *all members agree*.  
+  - Adding your name in the spreadsheet alone does **not** make you part of the team.
+  - Highlight your team in the spreadsheet (color or border).
+
+- **Topics:**  
+  - Multiple teams/individuals may choose the same topic.  
+  - Maximum **3 teams per topic**.
+
+- **If conflicts or uncertainties arise:** Contact the instructor directly.
+
+Thanks to everyone who has already submitted results!
+
