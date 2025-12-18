@@ -1,14 +1,10 @@
-# Use Maven to build the app
-FROM maven:3 AS build
-WORKDIR /app
-COPY pom.xml .
+FROM maven:3-eclipse-temurin-21 AS build
+WORKDIR /opt/app
 COPY src ./src
-RUN mvn clean package -DskipTests
+COPY pom.xml .
+RUN --mount=type=cache,target=/root/.m2 mvn -f /opt/app/pom.xml package
 
-# Run the app
-# jdk makes image bigger than jre, so the image size will be larger and I might introduce vulnerabilities
-FROM eclipse-temurin:21-jdk 
-WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+FROM eclipse-temurin:21-jre
+RUN mkdir -p /opt/app
+COPY --from=build /opt/app/target/simplecode-0.0.1-SNAPSHOT.jar /opt/app.jar
+ENTRYPOINT ["java","-jar","/opt/app.jar"]

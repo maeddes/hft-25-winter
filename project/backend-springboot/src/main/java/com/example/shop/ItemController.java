@@ -35,6 +35,13 @@ public class ItemController {
         return hostname;
     }
 
+    @GetMapping("/debug")
+    public String debug() throws UnknownHostException{
+
+        return this.getHostname() + " contains elements: " + this.list().toString();
+    }
+    
+
     // POST: create or add quantity
     @PostMapping
     public ResponseEntity<Item> createOrAdd(@RequestBody Item input) {
