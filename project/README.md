@@ -1,5 +1,7 @@
 # Load-Balancing with nginx reverse proxy - persistence with Spring Profiles
 
+![Architecture](./images/lab-architecture-prod.excalidraw.png)
+
 ---
 
 ## Shopping Items App — Docker Compose Setup & Usage
@@ -244,6 +246,10 @@ docker logs -f nginx
 ---
 
 ## Switching from Prod to Dev
+
+![Architecture Prod](./images/lab-architecture-prod.excalidraw.png)
+
+![Architecture Dev](./images/lab-architecture-dev.excalidraw.png)
 
 ### 1. Change profile in Docker Compose
 
