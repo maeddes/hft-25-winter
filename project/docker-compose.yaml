@@ -18,10 +18,7 @@ services:
     build: ./backend-springboot
     image: backend-springboot:v0.1
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/itemsdb
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: yourpassword
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_PROFILES_ACTIVE: prod
       SERVER_PORT: 8090
     ports:
       - "8091:8090"
@@ -32,10 +29,7 @@ services:
     build: ./backend-springboot
     image: backend-springboot:v0.1
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/itemsdb
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: yourpassword
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_PROFILES_ACTIVE: prod
       SERVER_PORT: 8090
     ports:
       - "8092:8090"
