@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-springboot
+  labels:
+    app: backend-springboot
+spec:
+  type: LoadBalancer
+  selector:
+    app: backend-springboot
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080

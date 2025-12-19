@@ -40,7 +40,13 @@ public class ItemController {
 
         return this.getHostname() + " contains elements: " + this.list().toString();
     }
-    
+
+    @GetMapping("/fail")
+    public String fail(){
+
+        System.exit(1);
+        return "Not failing anymore!";
+    }
 
     // POST: create or add quantity
     @PostMapping
