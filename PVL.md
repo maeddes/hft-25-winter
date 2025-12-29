@@ -71,3 +71,6 @@ Each team will implement a small distributed system using **plain Docker contain
 
 Thanks to everyone who has already submitted results!
 
+## Reference Implemenation
+
+[Click here](https://github.com/maeddes/hft-25-winter/tree/main/project)
