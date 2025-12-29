@@ -319,4 +319,129 @@ By the end of this lecture, students will be able to:
    * Cloud-Native Buildpacks
 10. In which scenarios would a team deliberately choose a Dockerfile over Buildpacks (or vice versa)?
 
+## **2025-Dec-5th-and-12th Kubernetes**
 
+### *Introduction*
+
+### **Content Overview**
+
+1. **Introduction to Kubernetes**  
+   - **What is Kubernetes?**: High-level overview of Kubernetes as a container orchestration platform.  
+   - **Why Kubernetes?**: Key benefits, including scalability, fault tolerance, and management of containerized applications.  
+
+2. **Kubernetes Cluster Architecture**  
+   - **Control Plane and Worker Nodes**: Explanation of the roles and responsibilities of the control plane and worker nodes in a Kubernetes cluster.  
+   - **Key Components**: Overview of critical components like `kube-apiserver`, `etcd`, `kube-scheduler`, `kube-controller-manager`, and `kubelet`.  
+
+![Kubernetes High Level Architecture](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_11_11_kubernetes_architecture.png)
+
+3. **Declarative Working Mode**  
+   - **Configuration as Code**: Introduction to Kubernetes' declarative approach for managing application state using YAML manifests.  
+   - **Reconciliation Loop**: How Kubernetes ensures desired state matches the actual state through its control loop.  
+
+4. **Most Important API Objects**  
+   - **Pods**: The smallest deployable unit in Kubernetes, representing one or more containers.  
+   - **ReplicaSets**: Ensuring the desired number of pod replicas are running.  
+   - **Deployments**: Managing updates and rollbacks for applications.  
+   - **Services**: Enabling communication between pods and exposing applications to external users.
+
+---
+
+### **Objectives and Exercises**
+
+*Students should be able to:*
+
+- Explain what Kubernetes is, why it is used, and its primary benefits.  
+- Describe the architecture of a Kubernetes cluster and the roles of its key components.  
+- Demonstrate understanding of the declarative approach for managing applications in Kubernetes.  
+- Identify and explain the purpose of key Kubernetes API objects, including pods, ReplicaSets, deployments, and services.  
+
+---
+
+### **Student/Review Questions**
+
+1. **What is Kubernetes, and why is it beneficial for managing containerized applications?**  
+2. **Describe the roles of the control plane and worker nodes in a Kubernetes cluster.**  
+3. **What is the function of the `kube-apiserver` and `etcd` in Kubernetes?**  
+4. **Explain Kubernetes’ declarative working mode. How does the reconciliation loop ensure consistency?**  
+5. **What is a pod in Kubernetes, and how does it differ from a container?**  
+6. **How do ReplicaSets help ensure application reliability?**  
+7. **What are deployments in Kubernetes, and how do they simplify updates and rollbacks?**  
+8. **How do services in Kubernetes enable communication between pods and expose applications externally?**
+
+### *Kubernetes in Action*
+
+### Different ways to access a Kubernetes environment (Public Cloud, Codespace, local (Kind, Minikube,...))
+
+![Different Kubernetes Offerings](https://github.com/maeddes/hse-24-winter/blob/main/images/2024_12_02_Kubernetes_Options.png)
+
+### Recap and relationship of important API objects
+
+![K8s objects relationships](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_13_Kubernetes_API_Object_Relationships.png)
+
+### **Content Overview**  
+
+This lecture provides an introduction to Kubernetes deployment options and revisits essential Kubernetes API objects in greater detail. Students will explore free Kubernetes trials offered by major cloud providers, local deployment tools like Minikube and Kind, and how to use Kubernetes in cloud-based IDEs like GitHub Codespaces. The session also deepens understanding of fundamental API objects such as Pods, Deployments, and Services, equipping students with practical knowledge for managing containerized applications in Kubernetes.  
+
+---
+
+### **Learning Objectives**  
+
+By the end of this lecture, students will be able to:  
+1. Identify and compare Kubernetes deployment options, including cloud trials and local setups.  
+2. Set up a Kubernetes cluster locally using tools like Minikube or Kind, and within GitHub Codespaces.  
+3. Describe the roles and relationships of basic Kubernetes API objects, including Pods, Deployments, and Services.  
+4. Deploy and manage containerized applications using Kubernetes API objects.  
+
+---  
+
+### **Student/Review Questions**  
+
+1. What are the advantages and limitations of using Kubernetes free trials from cloud providers compared to local tools like Minikube?  
+2. How does Minikube enable Kubernetes functionality within a GitHub Codespaces environment?  
+3. What is the role of a Pod in Kubernetes, and how does it differ from a Deployment?  
+4. How do Services enable communication between Kubernetes Pods and external clients?  
+5. How can you use a Deployment to ensure high availability for an application in Kubernetes? 
+
+## *Kubernetes Behaviour & Networking*
+
+![Scenario 1](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_20_Kubernetes_Scenarios_Recovery_From_Failure.png)
+
+![Scenario 2](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_20_Kubernetes_Scenarios_Load_Balancing.png)
+
+![Scenario 3](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_20_Kubernetes_Scenarios_Zero_Downtime_Update.png)
+
+### **Content Overview**  
+
+In this final Kubernetes lecture, wd explored key concepts to manage and scale applications effectively. The lecture covered the three main Kubernetes Service types—ClusterIP, NodePort, and LoadBalancer—and their use cases. Students also learned how to scale instances in a Deployment, achieving automatic load-balancing across Pods using a ClusterIP Service. The session demonstrated how Kubernetes handles automatic updates of applications through rolling updates in Deployments and how it ensures high availability by automatically recovering failed instances.  
+
+---  
+### **Learning Objectives**  
+
+By the end of this lecture, students will be able to:  
+1. Differentiate between the three main Kubernetes Service types: ClusterIP, NodePort, and LoadBalancer.  
+2. Scale a Kubernetes Deployment to handle increased load and distribute traffic automatically across instances.  
+3. Implement rolling updates in a Deployment to update applications without downtime.  
+4. Explain how Kubernetes ensures application stability by automatically recovering from Pod failures.  
+
+---  
+### **Student/Review Questions**  
+
+1. What are the differences between ClusterIP, NodePort, and LoadBalancer Services in Kubernetes?  
+2. How does Kubernetes automatically distribute incoming traffic across multiple instances in a Deployment?  
+3. How can you scale a Deployment to add more instances of your application?  
+4. What is a rolling update in Kubernetes, and why is it important for managing application updates?  
+5. How does Kubernetes detect and recover from crashed or failed Pods automatically?  
+6. Why is load-balancing critical in distributed systems, and how does Kubernetes achieve this with Services?  
+
+### 2025-Dec-19 Kubernetes Primitives revised
+
+
+
+
+
+For the New Year
+
+- complete deployment: https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_13_Kubernetes_Multi_App_Definition.png
+- Service Meshes & eBPF stuff
+- Otel stuff
