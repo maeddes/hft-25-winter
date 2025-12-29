@@ -231,7 +231,7 @@ e.g. how do technologies like Spring Boot (or other frameworks/languages), Docke
 
  Application & Communication / REST / Docker Compose
 
-![REST and multi-application setup](/images/2024_11_15_REST_multi_container.png)
+![REST and multi-application setup](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_11_15_REST_multi_container.png)
 
 ### **Content Overview**
 
