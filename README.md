@@ -15,7 +15,6 @@ Introduction to distributed systems - Overview Cloud Computing
    - Role communication protocols, service registry, distributed configuration
    - The fallacies of distributed computing
 
-
 **The NIST Cloud Definition (2011)**
    - Breakdown of the NIST’s five essential cloud characteristics, deployment models, and service models.
   
@@ -229,7 +228,8 @@ e.g. how do technologies like Spring Boot (or other frameworks/languages), Docke
 ### Homework
 - **DO THE DOCKER EXERCISES**
 
-### 2025-Nov-14 Application & Communication / REST / Docker Compose
+
+ Application & Communication / REST / Docker Compose
 
 ![REST and multi-application setup](/images/2024_11_15_REST_multi_container.png)
 
@@ -270,3 +270,53 @@ e.g. how do technologies like Spring Boot (or other frameworks/languages), Docke
 5. **Describe the advantages of using OpenAPI for REST API documentation.**  
 6. **How does Docker Compose enable multi-component application setups, and what are the benefits of externalized configuration?**  
 7. **Explain the role of container networking in Docker Compose and how it facilitates service communication.**
+
+### 2025-Nov-28 Optimized Image Builds - Limitations of plain Docker - Scalability with Docker
+
+### **Content Overview**
+
+This lecture focused on different approaches to building container images for JVM-based applications. Starting from classic, low-level techniques using Dockerfiles, it introduced more advanced and cloud-native build strategies that reduce complexity, improve security, and better integrate into modern CI/CD pipelines.
+
+We compared:
+
+* **Traditional Dockerfiles** and **Multi-Stage Dockerfiles** for building JVM applications
+* **Build tools–integrated approaches** like Google Jib
+* **Cloud-Native Buildpacks**, with a closer look at **Paketo Buildpacks**
+
+The lecture highlighted trade-offs around control vs. convenience, build-time vs. runtime concerns, image size, reproducibility, and developer experience.
+
+---
+
+### **Learning Objectives**
+
+By the end of this lecture, students will be able to:
+
+* Explain different strategies for building container images for JVM applications
+* Compare Dockerfile-based and Dockerfile-less build approaches
+* Understand how multi-stage builds improve image quality and security
+* Describe how Jib builds container images directly from JVM build tools
+* Explain the concept of Cloud-Native Buildpacks and their benefits
+* Understand the role of Paketo Buildpacks in the cloud-native ecosystem
+* Choose an appropriate container build strategy based on project and team requirements
+
+---
+
+### **Student / Review Questions**
+
+1. Why is building container images for JVM applications more complex than for simple binaries?
+2. What responsibilities does a traditional Dockerfile have when building a Spring Boot application?
+3. How does a **multi-stage Dockerfile** improve image size and security compared to a single-stage Dockerfile?
+4. What problems does **Jib** aim to solve compared to Dockerfile-based builds?
+5. How does Jib integrate with Maven or Gradle, and what are its main advantages and limitations?
+6. What are **Cloud-Native Buildpacks**, and how do they differ conceptually from Dockerfiles?
+7. What responsibilities are shifted from developers to the platform when using Buildpacks?
+8. What is **Paketo**, and how does it relate to CNCF and the Buildpacks ecosystem?
+9. Compare the following approaches in terms of control, transparency, and automation:
+
+   * Dockerfile
+   * Multi-stage Dockerfile
+   * Jib
+   * Cloud-Native Buildpacks
+10. In which scenarios would a team deliberately choose a Dockerfile over Buildpacks (or vice versa)?
+
+
