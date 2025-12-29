@@ -229,7 +229,7 @@ e.g. how do technologies like Spring Boot (or other frameworks/languages), Docke
 - **DO THE DOCKER EXERCISES**
 
 
- Application & Communication / REST / Docker Compose
+## 2025-Nov-14 Application & Communication / REST / Docker Compose
 
 ![REST and multi-application setup](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_11_15_REST_multi_container.png)
 
@@ -271,7 +271,7 @@ e.g. how do technologies like Spring Boot (or other frameworks/languages), Docke
 6. **How does Docker Compose enable multi-component application setups, and what are the benefits of externalized configuration?**  
 7. **Explain the role of container networking in Docker Compose and how it facilitates service communication.**
 
-### 2025-Nov-28 Optimized Image Builds - Limitations of plain Docker - Scalability with Docker
+## 2025-Nov-28 Optimized Image Builds - Limitations of plain Docker - Scalability with Docker
 
 ### **Content Overview**
 
@@ -434,7 +434,7 @@ By the end of this lecture, students will be able to:
 5. How does Kubernetes detect and recover from crashed or failed Pods automatically?  
 6. Why is load-balancing critical in distributed systems, and how does Kubernetes achieve this with Services?  
 
-### 2025-Dec-19 Kubernetes Primitives revised
+## 2025-Dec-19 Kubernetes Primitives revised
 
 
 
