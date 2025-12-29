@@ -436,9 +436,15 @@ By the end of this lecture, students will be able to:
 
 ## 2025-Dec-19 Kubernetes Primitives revised
 
+![App and Infra](images/Kubernetes-app-infra.png)
 
+---  
+### **Student/Review Questions**  
 
-
+- Why has K8s the concept of a pod? Why does it not run containers directly?
+- Why is there a concept of multiple nodes?
+- Why separation between RS and Deployment?
+- What is the difference between running two containers in the same pod vs. running them in individual pods?
 
 For the New Year
 
