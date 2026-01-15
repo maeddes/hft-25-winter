@@ -55,7 +55,7 @@ services:
     depends_on:
       - nginx
     environment:
-      API_BASE: http://localhost:8080/items
+      API_BASE: http://nginx:8080/items
 
 volumes:
   pgdata:
