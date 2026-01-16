@@ -446,6 +446,19 @@ By the end of this lecture, students will be able to:
 - Why separation between RS and Deployment?
 - What is the difference between running two containers in the same pod vs. running them in individual pods?
 
+## 2026-Jan-09 Kubernetes Application Handling - Removing minimal outages with probes
+
+![Scenario 2](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_20_Kubernetes_Scenarios_Load_Balancing.png)
+
+Documentation Link: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+
+### **Student/Review Questions**  
+
+- Why can little outages occur whenever an application starts?
+- In which two situations does this surface in particular?
+- Why is a concept like probes required for Kubernetes? Why is it important for containerized applications in general?
+- How do probes work?
+
 For the New Year
 
 - complete deployment: https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_13_Kubernetes_Multi_App_Definition.png
