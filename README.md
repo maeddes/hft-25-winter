@@ -455,7 +455,7 @@ Documentation Link: https://kubernetes.io/docs/tasks/configure-pod-container/con
 ### **Student/Review Questions**  
 
 - Why can little outages occur whenever an application starts?
-- In which two situations does this surface in particular?
+- In which three situations does this surface in particular?
 - Why is a concept like probes required for Kubernetes? Why is it important for containerized applications in general?
 - How do probes work?
 
