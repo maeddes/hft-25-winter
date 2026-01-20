@@ -464,3 +464,41 @@ For the New Year
 - complete deployment: https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_13_Kubernetes_Multi_App_Definition.png
 - Service Meshes & eBPF stuff
 - Otel stuff
+
+## 2026-Jan-16 Distributed patterns compared: Frameworks vs. K8s vs. Service Mesh vs. eBPF**
+
+### **Content Overview**
+
+This lecture explored the **implementation of distributed systems patterns** across different abstraction layers and technologies: **Java-based frameworks**, **Kubernetes**, **Service Meshes**, and **eBPF**. We discussed the common challenges in distributed systems—such as service discovery, routing, load-balancing, and resilience—and how different technologies approach these concerns.
+
+We compared:
+
+* **Framework-level solutions** (e.g., Spring Boot, Micronaut, Quarkus): functionalities like API Gateways, Service Registries, Circuit Breakers as part of the application code and build-time configuration.
+* **Kubernetes**: offloading many of those responsibilities to the platform level.
+* **Service Meshes** (e.g., Istio, Linkerd): providing additional traffic management, observability, and security by extending Kubernetes networking.
+* **eBPF-based solutions**: a modern, low-overhead approach to implementing service mesh features with better performance and kernel-level insight.
+
+---
+
+### **Learning Objectives**
+
+By the end of this lecture, students will be able to:
+
+* Understand the **core challenges** of distributed (microservice) architectures.
+* Identify how different technology layers (Frameworks, Kubernetes, Service Mesh, eBPF) **address cross-cutting concerns** such as discovery, routing, and resilience.
+* Compare trade-offs between **build-time coupling in frameworks** and **runtime abstraction in Kubernetes and beyond**.
+* Describe how **eBPF** differs from traditional service mesh implementations and why it's gaining popularity.
+
+---
+
+### **Student/Review Questions**
+
+1. What are some typical **distributed systems challenges** that arise when moving to a microservice architecture?
+2. How do frameworks like **Spring Boot or Micronaut** implement service discovery and load balancing?
+3. In what way does **Kubernetes shift** the implementation of distributed systems features away from the application code?
+4. What is a **Service Mesh**, and what additional capabilities does it provide on top of Kubernetes?
+5. How does the **eBPF approach** to networking and observability differ from traditional service meshes?
+6. What are the **pros and cons** of implementing distributed patterns at the framework level versus at the platform level?
+7. Why is **build-time vs. runtime coupling** relevant when comparing these technologies?
+
+No deep-level knowledge about Service Mesh and eBPF expected. Only the high-level idea why they exist and what the core differences to plain Kubernetes are.
