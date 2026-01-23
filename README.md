@@ -459,11 +459,9 @@ Documentation Link: https://kubernetes.io/docs/tasks/configure-pod-container/con
 - Why is a concept like probes required for Kubernetes? Why is it important for containerized applications in general?
 - How do probes work?
 
-For the New Year
 
-- complete deployment: https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_13_Kubernetes_Multi_App_Definition.png
-- Service Meshes & eBPF stuff
-- Otel stuff
+![Full K8s Deployment](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_13_Kubernetes_Multi_App_Definition.png)
+
 
 ## 2026-Jan-16 Distributed patterns compared: Frameworks vs. K8s vs. Service Mesh vs. eBPF**
 
