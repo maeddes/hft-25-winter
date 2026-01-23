@@ -463,7 +463,7 @@ Documentation Link: https://kubernetes.io/docs/tasks/configure-pod-container/con
 ![Full K8s Deployment](https://github.com/maeddes/hft-24-winter/raw/main/images/2024_12_13_Kubernetes_Multi_App_Definition.png)
 
 
-## 2026-Jan-16 Distributed patterns compared: Frameworks vs. K8s vs. Service Mesh vs. eBPF**
+## 2026-Jan-16 Distributed patterns compared: Frameworks vs. K8s vs. Service Mesh vs. eBPF
 
 ### **Content Overview**
 
